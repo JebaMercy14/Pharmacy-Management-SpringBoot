@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pharmacy Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Custom styles */
+        body {
+            background-image: url('https://example.com/path-to-your-background-image.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-opacity: 0.905; /* Adjust opacity (0 to 1) */
+            font-family: Arial, sans-serif;
+            color: #333; /* Text color */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #000; /* Black button theme */
+            border: none;
+            font-weight: bold; /* Bolder font */
+        }
+        .btn-primary:hover {
+            background-color: #111; /* Darker hover color */
+        }
+        .logo {
+            max-width: 100px; /* Adjust logo size as needed */
+        }
+        h2 {
+            font-size: 24px; /* Larger font size */
+            font-weight: bold; /* Bolder font */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://seeklogo.com/images/P/pharmacy-logo-4729C66E18-seeklogo.com.png" alt="Pharmacy Logo" class="logo"> <!-- Add your logo image -->
+        <h2 class="text-center mb-5">Update Supplier Detail</h2>
+        <form method="post" th:action="@{/supplier/edit}" th:object="${supplierDTO}" class="mt-4">
+		    <div class="mb-3 row">
+		        <label for="supplierName" class="col-sm-4 col-form-label">Supplier Name:</label>
+		        <div class="col-sm-8">
+		            <input type="text" id="supplierName" name="supplierName" th:field="*{supplierName}" class="form-control">
+		        </div>
+		    </div>		    
+		    
+		    <div class="mb-3 row">
+		        <label for="supplierEmail" class="col-sm-4 col-form-label">Email ID:</label>
+		        <div class="col-sm-8">
+		            <input type="text" id="supplierEmail" name="supplierEmail" th:field="*{supplierEmail}" class="form-control">
+		        </div>
+		    </div>
+		    
+		    <div class="mb-3 row">
+		        <label for="supplierContact" class="col-sm-4 col-form-label">Contact No.:</label>
+		        <div class="col-sm-8">
+		            <input type="text" id="supplierContact" name="supplierContact" th:field="*{supplierContact}" class="form-control">
+		        </div>
+		    </div>
+		    
+		    <div class="mb-3 row">
+		        <label for="supplierAddress" class="col-sm-4 col-form-label">Address:</label>
+		        <div class="col-sm-8">
+		            <input type="text" id="supplierAddress" name="supplierAddress" th:field="*{supplierAddress}" class="form-control">
+		        </div>
+		    </div>
+		    
+		    <div class="mb-3 row">
+		        <label for="companyName" class="col-sm-4 col-form-label">Company Name:</label>
+		        <div class="col-sm-8">
+		            <input type="text" id="companyName" name="companyName" th:field="*{companyName}" class="form-control">
+		        </div>
+		    </div>
+		
+		    <div class="mb-3 row">
+		        <label for="contactPerson" class="col-sm-4 col-form-label">Contact Person:</label>
+		        <div class="col-sm-8">
+		            <input type="text" id="contactPerson" name="contactPerson" th:field="*{contactPerson}" class="form-control">
+		        </div>
+		    </div>
+		    
+		    <div class="mb-3 row">
+			    <label for="drugsSupplied" class="col-sm-4 col-form-label">Drugs Supplied:</label>
+			    <div class="col-sm-8">
+			        <textarea id="drugsSupplied" name="drugsSupplied" th:field="*{drugsSupplied}" class="form-control" rows="5"></textarea>
+			    </div>
+			</div>
+		    
+		    <input type="hidden" id="supplierID" name="supplierID" th:field="*{supplierID}" class="form-control">
+		    
+		    <button type="submit" class="btn btn-primary">Update</button>
+		</form>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
